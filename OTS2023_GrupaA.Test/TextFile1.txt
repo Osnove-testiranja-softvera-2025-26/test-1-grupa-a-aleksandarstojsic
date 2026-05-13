@@ -1,0 +1,16 @@
+﻿HiddenGold = "LessThan5", "MoreThan5", "LessThan10", "MoreThan10"
+Gold = "MoreThan15"
+RevealHiddenItem = "True", "False"
+
+Score= "Bad", "Average", "Good"
+
+
+IF [HiddenGold] = "MoreThan10"
+THEN [Score] = "Good";
+IF [Gold] = "MoreThan15" AND [RevealHiddenItem] = "True"
+THEN [Score] = "Average";
+IF [Gold] = "MoreThan15" AND [RevealHiddenItem] = "True" AND [HiddenGold] = "MoreThan5"
+THEN [Score] = "Good";
+IF [Gold] = "MoreThan15" AND "RevealHiddenItem] = "True" And [HiddenGold] = "LessThan5"
+THEN [Score] = "Average";
+ELSE [Score] = "Bad";
